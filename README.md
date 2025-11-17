@@ -21,6 +21,61 @@ A starter template for building Jira data extraction and analysis tools with Nod
 - A Jira account with API access
 - Jira API token ([create one here](https://id.atlassian.com/manage-profile/security/api-tokens))
 
+## Installing Node.js
+
+If you don't have Node.js installed, choose one of the following methods:
+
+### Option 1: Official Node.js Installer (Recommended for Beginners)
+
+1. Visit [nodejs.org](https://nodejs.org/)
+2. Download the LTS (Long Term Support) version
+3. Run the installer and follow the prompts
+4. Verify installation:
+   ```bash
+   node --version
+   npm --version
+   ```
+
+### Option 2: Using Node Version Manager (Recommended for Developers)
+
+**Windows (nvm-windows):**
+1. Download nvm-windows from [github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases)
+2. Run the installer
+3. Open a new terminal and install Node.js:
+   ```bash
+   nvm install lts
+   nvm use lts
+   ```
+
+**macOS/Linux (nvm):**
+1. Install nvm:
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+   ```
+2. Restart your terminal and install Node.js:
+   ```bash
+   nvm install --lts
+   nvm use --lts
+   ```
+
+### Option 3: Package Managers
+
+**macOS (Homebrew):**
+```bash
+brew install node
+```
+
+**Linux (Ubuntu/Debian):**
+```bash
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
+**Linux (Fedora/RHEL):**
+```bash
+sudo dnf install nodejs
+```
+
 ## Quick Start
 
 ### 1. Installation
@@ -250,13 +305,23 @@ This template is optimized for use with [Claude Code](https://code.claude.com/),
    ```
    Follow the prompts to sign in with your Anthropic account.
 
-3. **Open your project in VS Code**
+3. **Initialize your project**
    ```bash
    cd jira-nodejs-starter
+   claude
+   ```
+   Once Claude starts, run:
+   ```
+   /init
+   ```
+   This creates a CLAUDE.md file that helps Claude understand your project structure, coding conventions, and guidelines. You can customize this file to provide project-specific context.
+
+4. **Open your project in VS Code**
+   ```bash
    code .
    ```
 
-4. **Start Claude Code in VS Code's integrated terminal**
+5. **Start Claude Code in VS Code's integrated terminal**
    - Open the integrated terminal in VS Code: `` Ctrl+` `` (backtick) or `View > Terminal`
    - Start Claude Code:
      ```bash
@@ -329,6 +394,21 @@ claude --model sonnet
 "Add JSDoc comments to all exported functions"
 "Add input validation to the searchIssues function"
 ```
+
+### Useful Slash Commands
+
+Claude Code provides built-in slash commands to enhance your workflow:
+
+- **`/init`** - Initialize project with CLAUDE.md guide (helps Claude understand your project)
+- **`/help`** - Get help with using Claude Code
+- **`/review`** - Request a code review of recent changes
+- **`/memory`** - Edit CLAUDE.md memory files to customize project context
+- **`/context`** - Visualize current context usage
+- **`/cost`** - Show token usage and cost statistics
+- **`/export`** - Export the current conversation to a file
+- **`/clear`** - Clear conversation history for a fresh start
+
+Type any slash command during a Claude Code session to use it.
 
 ### Tips for Using Claude Code
 
