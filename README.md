@@ -233,6 +233,128 @@ const fields = 'summary,status,customfield_10001,customfield_10002';
 const issues = await searchIssues(jiraClient, jql, fields);
 ```
 
+## Development with Claude Code CLI
+
+This template is optimized for use with [Claude Code](https://code.claude.com/), an AI-powered CLI tool that can help you extend and customize the template.
+
+### Getting Started with Claude Code
+
+1. **Install Claude Code**
+   ```bash
+   npm install -g @anthropic-ai/claude-code
+   ```
+
+2. **Authenticate**
+   ```bash
+   claude auth
+   ```
+   Follow the prompts to sign in with your Anthropic account.
+
+3. **Open your project in VS Code**
+   ```bash
+   cd jira-nodejs-starter
+   code .
+   ```
+
+4. **Start Claude Code in VS Code's integrated terminal**
+   - Open the integrated terminal in VS Code: `` Ctrl+` `` (backtick) or `View > Terminal`
+   - Start Claude Code:
+     ```bash
+     claude
+     ```
+   - Claude will initialize and be ready to help with your project
+
+### Using Claude Code in VS Code
+
+**Benefits of using Claude Code in VS Code:**
+- Claude can read and edit files directly in your workspace
+- Changes appear immediately in your editor
+- You can review Claude's changes using VS Code's diff view
+- Keep your code and Claude side-by-side
+
+**Recommended VS Code Setup:**
+1. **Split terminal and editor**: Use split panes to see code and Claude simultaneously
+2. **Source control integration**: Review changes in VS Code's Git panel before committing
+3. **Auto-save**: Enable auto-save (`File > Auto Save`) to see Claude's changes immediately
+
+### Using the Terminal with Claude
+
+**Starting a session:**
+```bash
+# Start in your project directory
+cd jira-nodejs-starter
+claude
+
+# Or specify a different model if needed
+claude --model sonnet
+```
+
+**During a session:**
+- Type naturally - describe what you want in plain English
+- Press `Ctrl+C` to cancel Claude's current operation
+- Type `exit` or press `Ctrl+D` to end the session
+- Claude maintains context throughout the conversation
+
+**Reviewing changes:**
+- Claude will show you what files it modifies
+- Use `git diff` to review all changes
+- Use VS Code's Source Control panel for a visual diff
+
+### Common Claude Code Tasks
+
+#### Understanding the Codebase
+```
+"Explain how the Jira authentication works in this template"
+"Show me how pagination is handled in the searchIssues function"
+"What helper functions are available and what do they do?"
+```
+
+#### Adding New Features
+```
+"Add a function to fetch all comments from an issue"
+"Create a new example that exports issue history to JSON"
+"Add support for updating issue fields"
+```
+
+#### Debugging and Fixes
+```
+"Why am I getting authentication errors?"
+"Fix the rate limiting issues when fetching many issues"
+"Add better error handling to the CSV export"
+```
+
+#### Code Improvements
+```
+"Refactor the helpers.js file to use async/await consistently"
+"Add JSDoc comments to all exported functions"
+"Add input validation to the searchIssues function"
+```
+
+### Tips for Using Claude Code
+
+- **Be specific**: Describe what you want to achieve clearly
+- **Reference files**: Claude can read and modify multiple files
+- **Iterate**: Start with basic functionality and refine
+- **Ask questions**: Claude can explain code and suggest improvements
+- **Use context**: Claude understands your project structure
+
+### Example Workflow
+
+```bash
+# Start Claude Code
+claude
+
+# Example session:
+You: "I need to add a function that fetches sprint data from Jira"
+Claude: [Analyzes codebase and adds the function to helpers.js]
+
+You: "Now create an example script that uses this function"
+Claude: [Creates examples/sprint-report.js and updates package.json]
+
+You: "Add error handling and rate limiting"
+Claude: [Improves the implementation with robust error handling]
+```
+
 ## Common Use Cases
 
 ### 1. Generate Reports
